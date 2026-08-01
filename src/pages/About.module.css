@@ -1,0 +1,200 @@
+.page {
+  min-height: 100vh;
+}
+
+/* Hero */
+.hero {
+  padding: 140px 0 var(--space-8);
+  background: linear-gradient(135deg, #F5EFE6 0%, #EDE3D4 100%);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0.5rem 0 var(--space-3);
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--neutral-700);
+  line-height: 1.7;
+}
+
+/* Story */
+.story {
+  padding: var(--space-12) 0;
+}
+
+.storyInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.storyImage {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
+}
+
+.storyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyText h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0.5rem 0 var(--space-3);
+}
+
+.storyText p {
+  font-size: 1rem;
+  color: var(--neutral-700);
+  line-height: 1.7;
+  margin-bottom: var(--space-3);
+}
+
+/* MVV */
+.mvv {
+  padding: var(--space-12) 0;
+  background: var(--neutral-50);
+}
+
+.mvvGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.mvvCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mvvCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvvIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(75,127,82,0.1);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.mvvCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mvvCard p {
+  font-size: 0.9rem;
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+/* Process */
+.process {
+  padding: var(--space-12) 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.sectionHeader h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-top: 0.5rem;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.step {
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.stepNum {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--kraft);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.step h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.875rem;
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta {
+  padding: var(--space-8) 0 var(--space-12);
+}
+
+.ctaInner {
+  text-align: center;
+  background: var(--cream-dark);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-4);
+  color: var(--green-dark);
+}
+
+.ctaInner h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin: var(--space-2) 0 0.5rem;
+}
+
+.ctaInner p {
+  color: var(--neutral-700);
+  margin-bottom: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .storyInner {
+    grid-template-columns: 1fr;
+  }
+  .mvvGrid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .processSteps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .processSteps {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}

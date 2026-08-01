@@ -1,0 +1,220 @@
+.page {
+  min-height: 100vh;
+}
+
+/* Hero */
+.hero {
+  padding: 140px 0 var(--space-8);
+  background: linear-gradient(135deg, #F5EFE6 0%, #EDE3D4 100%);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0.5rem 0 var(--space-3);
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--neutral-700);
+  line-height: 1.7;
+}
+
+/* Services */
+.services {
+  padding: var(--space-12) 0;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.serviceCard {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceImg {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.serviceImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.serviceBody {
+  padding: var(--space-3);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(75,127,82,0.1);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.serviceBody h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.serviceBody > p {
+  font-size: 0.9rem;
+  color: var(--neutral-700);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+  flex: 1;
+}
+
+.serviceFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.serviceFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--neutral-700);
+}
+
+.serviceFeatures li svg {
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+/* How */
+.how {
+  padding: var(--space-12) 0;
+  background: var(--neutral-50);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.sectionHeader h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-top: 0.5rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.step {
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.stepNum {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-2);
+}
+
+.step h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.875rem;
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta {
+  padding: var(--space-8) 0 var(--space-12);
+}
+
+.ctaInner {
+  text-align: center;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-4);
+  color: white;
+}
+
+.ctaInner h2 {
+  color: white;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.ctaInner p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: var(--space-4);
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctaActions .btn-secondary {
+  color: white;
+  border-color: white;
+}
+
+.ctaActions .btn-secondary:hover {
+  background: white;
+  color: var(--green-dark);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
