@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ShoppingCart, Menu, X, Leaf, Sun, Moon, Globe } from 'lucide-react'
+import { ShoppingCart, Menu, X, Globe } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { usePreferences } from '../context/PreferencesContext'
 import { useT } from '../data/translations'
@@ -8,7 +8,7 @@ import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const { itemCount, openCart } = useCart()
-  const { theme, toggleTheme, language, toggleLanguage } = usePreferences()
+  const { language, toggleLanguage } = usePreferences()
   const t = useT()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -58,9 +58,6 @@ export default function Navbar() {
             <Globe size={18} />
             <span className={styles.langLabel}>{language.toUpperCase()}</span>
           </button>
-          <button className={styles.iconBtn} onClick={toggleTheme} aria-label="Toggle theme" title={theme === 'light' ? t('nav_dark') : t('nav_light')}>
-            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-          </button>
           <Link to="/infusions" className={styles.ctaBtn}>
             {t('nav_order')}
           </Link>
@@ -96,10 +93,6 @@ export default function Navbar() {
             <button className={styles.iconBtn} onClick={toggleLanguage}>
               <Globe size={18} />
               <span>{language.toUpperCase()}</span>
-            </button>
-            <button className={styles.iconBtn} onClick={toggleTheme}>
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-              <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
             </button>
           </div>
           <Link to="/infusions" className={`btn-primary ${styles.mobileCta}`} onClick={() => setMobileOpen(false)}>

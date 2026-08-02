@@ -22,135 +22,165 @@
   line-height: 1.7;
 }
 
-/* Story */
-.story {
+/* Story / Birth */
+.birth {
   padding: var(--space-12) 0;
 }
 
-.storyInner {
+.birthInner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
   align-items: center;
 }
 
-.storyImage {
+.birthImage {
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   aspect-ratio: 4 / 3;
 }
 
-.storyImage img {
+.birthImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.storyText h2 {
+.birthText h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin: 0.5rem 0 var(--space-3);
 }
 
-.storyText p {
+.birthText p {
   font-size: 1rem;
   color: var(--neutral-700);
   line-height: 1.7;
   margin-bottom: var(--space-3);
 }
 
-/* MVV */
-.mvv {
+/* Domain */
+.domain {
   padding: var(--space-12) 0;
   background: var(--neutral-50);
 }
 
-.mvvGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+.domainContent {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.mvvCard {
+.domainText {
+  margin-bottom: var(--space-6);
+}
+
+.domainText p {
+  font-size: 1.05rem;
+  color: var(--neutral-700);
+  line-height: 1.8;
+  margin-bottom: var(--space-3);
+  text-align: center;
+}
+
+.domainValues {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.domainValueCard {
   background: white;
   border-radius: var(--radius-lg);
   padding: var(--space-4);
+  text-align: center;
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.mvvCard:hover {
+.domainValueCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
-.mvvIcon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(75,127,82,0.1);
+.domainValueIcon {
   color: var(--green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-2);
+  margin: 0 auto var(--space-2);
 }
 
-.mvvCard h3 {
+.domainValueCard h4 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--neutral-800);
 }
 
-.mvvCard p {
-  font-size: 0.9rem;
+.domainValueCard p {
+  font-size: 0.95rem;
   color: var(--neutral-600);
   line-height: 1.6;
 }
 
-/* Process */
-.process {
+/* Founder */
+.founder {
   padding: var(--space-12) 0;
 }
 
-.sectionHeader {
-  text-align: center;
-  margin-bottom: var(--space-6);
-}
-
-.sectionHeader h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-top: 0.5rem;
-}
-
-.processSteps {
+.founderInner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
 }
 
-.step {
-  text-align: center;
-  padding: var(--space-3);
+.founderText h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0.5rem 0 var(--space-2);
+  color: var(--green-dark);
 }
 
-.stepNum {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 700;
+.founderTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--kraft);
-  display: block;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3) !important;
 }
 
-.step h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.founderText p {
+  font-size: 1rem;
+  color: var(--neutral-700);
+  line-height: 1.7;
+  margin-bottom: var(--space-3);
 }
 
-.step p {
-  font-size: 0.875rem;
-  color: var(--neutral-600);
+.founderImage {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 3 / 4;
+}
+
+.founderImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founderImageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+  padding: var(--space-4);
+}
+
+.founderImageQuote {
+  color: white;
+  font-size: 0.95rem;
+  font-style: italic;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* CTA */
@@ -168,7 +198,7 @@
 
 .ctaInner h2 {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
-  margin: var(--space-2) 0 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 .ctaInner p {
@@ -176,25 +206,33 @@
   margin-bottom: var(--space-4);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .storyInner {
-    grid-template-columns: 1fr;
-  }
-  .mvvGrid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-  .processSteps {
-    grid-template-columns: 1fr 1fr;
-  }
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-6);
 }
 
-@media (max-width: 560px) {
-  .processSteps {
+.sectionHeader h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .birthInner {
     grid-template-columns: 1fr;
-    max-width: 360px;
+  }
+  .domainValues {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .founderInner {
+    grid-template-columns: 1fr;
+  }
+  .founderImage {
+    order: -1;
+    max-width: 400px;
     margin: 0 auto;
   }
 }

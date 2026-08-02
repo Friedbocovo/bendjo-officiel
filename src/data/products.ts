@@ -25,9 +25,9 @@ export const PRODUCTS: Product[] = [
     benefits: ['Vitamine C', 'Calcium', 'Magnésium', 'Potassium'],
     color: '#FFF0F0',
     accentColor: '#D64545',
-    price: 2500,
+    price: 1500,
     formatKey: 'product_format',
-    image: 'https://images.pexels.com/photos/3650229/pexels-photo-3650229.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'public/images/hib.webp',
   },
   {
     id: 'basilic',
@@ -36,9 +36,9 @@ export const PRODUCTS: Product[] = [
     benefits: ['Vitamine A', 'Vitamine E', 'Vitamine C', 'Digestion facilitée'],
     color: '#F0F7F1',
     accentColor: '#4B7F52',
-    price: 2500,
+    price: 1500,
     formatKey: 'product_format',
-    image: 'https://images.pexels.com/photos/4198932/pexels-photo-4198932.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'public/images/bas.webp',
   },
   {
     id: 'citronnelle',
@@ -47,9 +47,9 @@ export const PRODUCTS: Product[] = [
     benefits: ['Vitamine E', 'Magnésium', 'Enzymes digestives', 'Antioxydants'],
     color: '#FFF8EC',
     accentColor: '#E08A2E',
-    price: 2500,
+    price: 1500,
     formatKey: 'product_format',
-    image: 'https://images.pexels.com/photos/4820814/pexels-photo-4820814.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'public/images/cit.webp',
   },
 ]
 

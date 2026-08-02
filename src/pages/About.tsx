@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Target, Eye, Heart, Sparkles } from 'lucide-react'
+import { ArrowRight, Heart, Users } from 'lucide-react'
 import { useSeo } from '../hooks/useSeo'
 import { useT } from '../data/translations'
 import Reveal from '../components/Reveal'
@@ -26,78 +26,90 @@ export default function About() {
         </div>
       </section>
 
-      {/* Story */}
-      <section className={styles.story}>
-        <div className={`container ${styles.storyInner}`}>
+      {/* Naissance de BenDjo */}
+      <section className={styles.birth}>
+        <div className={`container ${styles.birthInner}`}>
           <Reveal variant="left">
-            <div className={styles.storyImage}>
+            <div className={styles.birthImage}>
               <img
-                src="https://images.pexels.com/photos/4198562/pexels-photo-4198562.jpeg?auto=compress&cs=tinysrgb&w=700"
-                alt={t('about_story_title')}
+                src="public/images/about.webp"
+                alt={t('about_birth_title')}
                 loading="lazy"
               />
             </div>
           </Reveal>
           <Reveal variant="right">
-            <div className={styles.storyText}>
-              <span className="section-label">{t('about_story_label')}</span>
-              <h2>{t('about_story_title')}</h2>
-              <p>{t('about_story_p1')}</p>
-              <p>{t('about_story_p2')}</p>
-              <p>{t('about_story_p3')}</p>
+            <div className={styles.birthText}>
+              <span className="section-label">{t('about_birth_label')}</span>
+              <h2>{t('about_birth_title')}</h2>
+              <p>{t('about_birth_p1')}</p>
+              <p>{t('about_birth_p2')}</p>
+              <p>{t('about_birth_p3')}</p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Mission / Vision / Values */}
-      <section className={styles.mvv}>
-        <div className="container">
-          <div className={styles.mvvGrid}>
-            {[
-              { icon: Target, title: t('about_mission_title'), text: t('about_mission_text') },
-              { icon: Eye, title: t('about_vision_title'), text: t('about_vision_text') },
-              { icon: Heart, title: t('about_values_title'), text: t('about_values_text') },
-            ].map((v, i) => (
-              <Reveal key={i} delay={i * 120} variant="up">
-                <div className={styles.mvvCard}>
-                  <div className={styles.mvvIcon}>
-                    <v.icon size={24} />
-                  </div>
-                  <h3>{v.title}</h3>
-                  <p>{v.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className={styles.process}>
+      {/* Pourquoi ce domaine */}
+      <section className={styles.domain}>
         <div className="container">
           <Reveal variant="up">
             <div className={styles.sectionHeader}>
-              <span className="section-label">{t('about_process_label')}</span>
-              <h2>{t('about_process_title')}</h2>
+              <span className="section-label">{t('about_domain_label')}</span>
+              <h2>{t('about_domain_title')}</h2>
             </div>
           </Reveal>
-          <div className={styles.processSteps}>
-            {[
-              { num: '01', title: t('about_step1_title'), text: t('about_step1_text') },
-              { num: '02', title: t('about_step2_title'), text: t('about_step2_text') },
-              { num: '03', title: t('about_step3_title'), text: t('about_step3_text') },
-              { num: '04', title: t('about_step4_title'), text: t('about_step4_text') },
-            ].map((step, i) => (
-              <Reveal key={i} delay={i * 100} variant="up">
-                <div className={styles.step}>
-                  <span className={styles.stepNum}>{step.num}</span>
-                  <h4>{step.title}</h4>
-                  <p>{step.text}</p>
+          <div className={styles.domainContent}>
+            <Reveal variant="up" delay={100}>
+              <div className={styles.domainText}>
+                <p>{t('about_domain_p1')}</p>
+                <p>{t('about_domain_p2')}</p>
+                <p>{t('about_domain_p3')}</p>
+              </div>
+            </Reveal>
+            <Reveal variant="up" delay={200}>
+              <div className={styles.domainValues}>
+                <div className={styles.domainValueCard}>
+                  <Heart size={32} className={styles.domainValueIcon} />
+                  <h4>{t('about_domain_value1_title')}</h4>
+                  <p>{t('about_domain_value1_text')}</p>
                 </div>
-              </Reveal>
-            ))}
+                <div className={styles.domainValueCard}>
+                  <Users size={32} className={styles.domainValueIcon} />
+                  <h4>{t('about_domain_value2_title')}</h4>
+                  <p>{t('about_domain_value2_text')}</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* Présentation de la co-fondatrice */}
+      <section className={styles.founder}>
+        <div className={`container ${styles.founderInner}`}>
+          <Reveal variant="left">
+            <div className={styles.founderText}>
+              <span className="section-label">{t('about_founder_label')}</span>
+              <h2>{t('about_founder_name')}</h2>
+              <p className={styles.founderTitle}>{t('about_founder_title')}</p>
+              <p>{t('about_founder_bio_p1')}</p>
+              <p>{t('about_founder_bio_p2')}</p>
+              <p>{t('about_founder_bio_p3')}</p>
+            </div>
+          </Reveal>
+          <Reveal variant="right">
+            <div className={styles.founderImage}>
+              <img
+                src="public/images/benedict.webp"
+                alt={t('about_founder_name')}
+                loading="lazy"
+              />
+              <div className={styles.founderImageOverlay}>
+                <p className={styles.founderImageQuote}>{t('about_founder_quote')}</p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -106,7 +118,6 @@ export default function About() {
         <div className="container">
           <Reveal variant="scale">
             <div className={styles.ctaInner}>
-              <Sparkles size={32} />
               <h2>{t('about_cta_title')}</h2>
               <p>{t('about_cta_text')}</p>
               <Link to="/infusions" className="btn-primary">

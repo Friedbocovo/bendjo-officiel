@@ -1,0 +1,336 @@
+.onboarding {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #F5EFE6 0%, #EDE3D4 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Products Container */
+.productsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.productItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.productImage {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation: From Left - Hibiscus (0-0.6s image, 0.6-1s label) */
+.fromLeft {
+  animation: slideFromLeft 0.6s ease-out forwards;
+  animation-delay: 0s;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-150vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation: From Top - Basilic (1s-1.6s image, 1.6s-2s label) */
+.fromTop {
+  animation: slideFromTop 0.6s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-150vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation: From Right - Citronnelle (2s-2.6s image, 2.6s-3s label) */
+.fromRight {
+  animation: slideFromRight 0.6s ease-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(150vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Product Labels */
+.productLabel {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--neutral-800);
+  opacity: 0;
+  text-transform: capitalize;
+}
+
+/* Label Animations */
+.labelFromLeft {
+  animation: labelSlideFromLeft 0.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes labelSlideFromLeft {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.labelFromBottom {
+  animation: labelSlideFromBottom 0.4s ease-out forwards;
+  animation-delay: 1.6s;
+}
+
+@keyframes labelSlideFromBottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.labelFromRight {
+  animation: labelSlideFromRight 0.4s ease-out forwards;
+  animation-delay: 2.6s;
+}
+
+@keyframes labelSlideFromRight {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* BenDjo Logo */
+.bendjoLogo {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.bendjoLogo.showBendjo {
+  opacity: 1;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bendjoLogo .logoImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: scale(0);
+}
+
+.bendjoLogo.showBendjo .logoImage {
+  animation: logoAppear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.brandText {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: flex;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-30px);
+  color: var(--neutral-800);
+}
+
+.bendjoLogo.showBendjo .letter {
+  animation: letterDrop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.letterGreen {
+  background: linear-gradient(135deg, var(--green-light), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes letterDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Progress Section */
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 2rem;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  border-radius: 999px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 10px rgba(75, 127, 82, 0.5);
+}
+
+.progressText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--green-dark);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .productsContainer {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .productImage {
+    width: 140px;
+    height: 140px;
+  }
+
+  .productLabel {
+    font-size: 1.3rem;
+  }
+
+  .brandText {
+    font-size: 2.5rem;
+  }
+
+  .bendjoLogo .logoImage {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 600px) {
+  .productsContainer {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .productImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .productLabel {
+    font-size: 1.2rem;
+  }
+
+  .progressSection {
+    max-width: 300px;
+  }
+
+  .progressText {
+    font-size: 1.2rem;
+  }
+}

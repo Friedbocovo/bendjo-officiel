@@ -22,146 +22,152 @@
   line-height: 1.7;
 }
 
-/* Services */
-.services {
+/* Services Detail */
+.serviceDetail {
   padding: var(--space-12) 0;
 }
 
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+.serviceDetailAlt {
+  background: var(--neutral-50);
 }
 
-.serviceCard {
-  background: white;
+.serviceDetailInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.serviceDetailImage {
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-
-.serviceCard:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
 }
 
-.serviceImg {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-}
-
-.serviceImg img {
+.serviceDetailImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.serviceBody {
-  padding: var(--space-3);
-  flex: 1;
+.serviceDetailText {
   display: flex;
   flex-direction: column;
+  gap: var(--space-4);
 }
 
 .serviceIcon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: rgba(75,127,82,0.1);
   color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-2);
 }
 
-.serviceBody h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+.serviceDetailText h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0;
+  color: var(--neutral-800);
 }
 
-.serviceBody > p {
-  font-size: 0.9rem;
+/* Description */
+.serviceDesc {
+  font-size: 1.05rem;
   color: var(--neutral-700);
-  line-height: 1.6;
-  margin-bottom: var(--space-3);
-  flex: 1;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.serviceFeatures {
+/* Bénéfices Section */
+.benefitsSection {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.benefitsSection h4 {
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.benefitsList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
+  margin: 0;
 }
 
-.serviceFeatures li {
+.benefitsList li {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.95rem;
   color: var(--neutral-700);
+  line-height: 1.5;
 }
 
-.serviceFeatures li svg {
+.benefitsList li svg {
   color: var(--green);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-/* How */
-.how {
-  padding: var(--space-12) 0;
-  background: var(--neutral-50);
+/* Étapes Section */
+.stepsSection {
+  background: white;
+  border: 2px solid var(--neutral-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
 }
 
-.sectionHeader {
-  text-align: center;
-  margin-bottom: var(--space-6);
+.stepsSection h4 {
+  font-size: 1.1rem;
+  color: var(--kraft);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
 }
 
-.sectionHeader h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-top: 0.5rem;
+.stepsList {
+  list-style: none;
+  counter-reset: step-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+.stepsList li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 0.95rem;
+  color: var(--neutral-700);
+  line-height: 1.6;
 }
 
-.step {
-  text-align: center;
-  padding: var(--space-3);
-}
-
-.stepNum {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--green);
+.stepsList li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--kraft);
   color: white;
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--space-2);
-}
-
-.step h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.step p {
-  font-size: 0.875rem;
-  color: var(--neutral-600);
-  line-height: 1.6;
 }
 
 /* CTA */
@@ -207,14 +213,17 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .servicesGrid {
+  .serviceDetailInner {
     grid-template-columns: 1fr;
-    max-width: 480px;
+  }
+  .serviceDetailImage {
+    max-width: 500px;
     margin: 0 auto;
   }
-  .steps {
+  .serviceDetailAlt .serviceDetailInner {
     grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+  }
+  .serviceDetailAlt .serviceDetailImage {
+    order: -1;
   }
 }

@@ -5,12 +5,13 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CartDrawer from './components/CartDrawer'
 import Chatbot from './components/Chatbot'
+import Onboarding from './components/Onboarding'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Infusions from './pages/Infusions'
 import Contact from './pages/Contact'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
 function ScrollToTop() {
@@ -22,10 +23,17 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const [showOnboarding, setShowOnboarding] = useState(true)
+
+  const handleOnboardingComplete = () => {
+    setShowOnboarding(false)
+  }
+
   return (
     <BrowserRouter>
       <PreferencesProvider>
         <CartProvider>
+          {showOnboarding && <Onboarding onComplete={handleOnboardingComplete} />}
           <ScrollToTop />
           <Navbar />
           <CartDrawer />

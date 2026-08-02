@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Minus, ShoppingBag, Check, Leaf } from 'lucide-react'
+import { Plus, Minus, ShoppingBag, Check, Leaf, Info } from 'lucide-react'
 import { PRODUCTS } from '../data/products'
 import { useCart } from '../context/CartContext'
 import { useSeo } from '../hooks/useSeo'
@@ -8,7 +8,7 @@ import { usePreferences } from '../context/PreferencesContext'
 import Reveal from '../components/Reveal'
 import styles from './Infusions.module.css'
 
-const WHATSAPP_NUMBER = '22900000000'
+const WHATSAPP_NUMBER = '22901620141661'
 
 export default function Infusions() {
   const { items, addItem, updateQuantity, removeItem, total, clearCart, itemCount } = useCart()
@@ -60,6 +60,52 @@ export default function Infusions() {
             <span className="section-label">{t('infusions_label')}</span>
             <h1>{t('infusions_title')}</h1>
             <p>{t('infusions_text')}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Section éducative - Format Héro avec badges */}
+      <section className={styles.eduSection}>
+        <div className="container">
+          <Reveal variant="up">
+            <div className={styles.eduHero}>
+              <div className={styles.eduHeroContent}>
+                <span className={styles.eduBadge}>🍃 100% Naturel</span>
+                <h2 className={styles.eduHeroTitle}>Infusions naturelles du Bénin</h2>
+                <p className={styles.eduHeroText}>{t('infusions_edu_def_text')}</p>
+              </div>
+              
+              <div className={styles.eduStats}>
+                <div className={styles.statItem}>
+                  <div className={styles.statIcon}>💧</div>
+                  <div className={styles.statContent}>
+                    <h4>{t('infusions_edu_why_benefit1')}</h4>
+                    <p>{t('infusions_edu_why_benefit1_desc')}</p>
+                  </div>
+                </div>
+                <div className={styles.statItem}>
+                  <div className={styles.statIcon}>🌿</div>
+                  <div className={styles.statContent}>
+                    <h4>{t('infusions_edu_why_benefit2')}</h4>
+                    <p>{t('infusions_edu_why_benefit2_desc')}</p>
+                  </div>
+                </div>
+                <div className={styles.statItem}>
+                  <div className={styles.statIcon}>🇧🇯</div>
+                  <div className={styles.statContent}>
+                    <h4>{t('infusions_edu_bendjo_benefit1')}</h4>
+                    <p>{t('infusions_edu_bendjo_benefit1_desc')}</p>
+                  </div>
+                </div>
+                <div className={styles.statItem}>
+                  <div className={styles.statIcon}>🚫</div>
+                  <div className={styles.statContent}>
+                    <h4>{t('infusions_edu_bendjo_benefit2')}</h4>
+                    <p>{t('infusions_edu_bendjo_benefit2_desc')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
