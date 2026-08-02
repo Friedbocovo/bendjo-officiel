@@ -144,7 +144,7 @@ export default function Home() {
           <Reveal variant="left">
             <div className={styles.aboutImage}>
               <img
-                src="public/images/about.webp"
+                src="/images/about.webp"
                 alt={t('home_about_title')}
                 loading="lazy"
               />
