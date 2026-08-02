@@ -32,7 +32,7 @@ export default function About() {
           <Reveal variant="left">
             <div className={styles.birthImage}>
               <img
-                src="public/images/about.webp"
+                src="/images/about.webp"
                 alt={t('about_birth_title')}
                 loading="lazy"
               />
@@ -101,7 +101,7 @@ export default function About() {
           <Reveal variant="right">
             <div className={styles.founderImage}>
               <img
-                src="public/images/benedict.webp"
+                src="/images/benedict.webp"
                 alt={t('about_founder_name')}
                 loading="lazy"
               />
