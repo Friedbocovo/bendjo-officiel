@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Minus, ShoppingBag, Check, Leaf, Info } from 'lucide-react'
+import { Plus, Minus, ShoppingBag, Check, Leaf } from 'lucide-react'
 import { PRODUCTS } from '../data/products'
 import { useCart } from '../context/CartContext'
 import { useSeo } from '../hooks/useSeo'
