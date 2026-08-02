@@ -76,6 +76,12 @@
   backdrop-filter: blur(8px);
 }
 
+@media (max-width: 768px) {
+  .heroBadge {
+    margin-top: 150px;
+  }
+}
+
 .heroTitle {
   font-size: clamp(3.5rem, 8vw, 6rem);
   font-weight: 700;
