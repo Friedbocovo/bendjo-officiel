@@ -82,6 +82,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .heroBtnPrimary {
+    margin-top: -25px;
+  }
+}
+
 .heroTitle {
   font-size: clamp(3.5rem, 8vw, 6rem);
   font-weight: 700;
