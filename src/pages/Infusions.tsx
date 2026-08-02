@@ -8,7 +8,7 @@ import { usePreferences } from '../context/PreferencesContext'
 import Reveal from '../components/Reveal'
 import styles from './Infusions.module.css'
 
-const WHATSAPP_NUMBER = '22901620141661'
+const WHATSAPP_NUMBER = '2290162014161'
 
 export default function Infusions() {
   const { items, addItem, updateQuantity, removeItem, total, clearCart, itemCount } = useCart()

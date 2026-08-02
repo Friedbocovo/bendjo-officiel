@@ -5,7 +5,7 @@ import { useT } from '../data/translations'
 import { usePreferences } from '../context/PreferencesContext'
 import styles from './CartDrawer.module.css'
 
-const WHATSAPP_NUMBER = '22901620141661'
+const WHATSAPP_NUMBER = '2290162014161'
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, total, clearCart } = useCart()

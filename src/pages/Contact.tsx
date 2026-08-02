@@ -82,7 +82,7 @@ export default function Contact() {
                     <div className={styles.infoIcon}><Phone size={20} /></div>
                     <div>
                       <span className={styles.infoLabel}>{t('contact_phone')}</span>
-                      <a href="tel:+22901620141661">+229 01 62 01 41 61</a>
+                      <a href="tel:+2290162014161">+229 01 62 01 41 61</a>
                     </div>
                   </li>
                   <li>
