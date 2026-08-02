@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     accentColor: '#D64545',
     price: 1500,
     formatKey: 'product_format',
-    image: 'public/images/hib.webp',
+    image: '/images/hib.webp',
   },
   {
     id: 'basilic',
@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
     accentColor: '#4B7F52',
     price: 1500,
     formatKey: 'product_format',
-    image: 'public/images/bas.webp',
+    image: '/images/bas.webp',
   },
   {
     id: 'citronnelle',
@@ -49,7 +49,7 @@ export const PRODUCTS: Product[] = [
     accentColor: '#E08A2E',
     price: 1500,
     formatKey: 'product_format',
-    image: 'public/images/cit.webp',
+    image: '/images/cit.webp',
   },
 ]
 
