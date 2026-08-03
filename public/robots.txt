@@ -1,0 +1,6 @@
+# robots.txt pour BenDjo
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bendjo-officiel-theta.vercel.app/sitemap.xml
